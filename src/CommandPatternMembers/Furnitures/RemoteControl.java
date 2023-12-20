@@ -27,20 +27,25 @@ public class RemoteControl {
         this.offCommands[slot]=offCommand;
     }
 
-    public static void submit(Command command) {
-        command.execute();
-        undoStack.add(command);
+    public void onButtonPress(int slot){
+        onCommands[slot].execute();
+        undoStack.add(onCommands[slot]);
+        redoStack.clear();
+    }
+    public void offButtonPress(int slot){
+        offCommands[slot].execute();
+        undoStack.add(offCommands[slot]);
         redoStack.clear();
     }
 
-    public static void undo() {
+    public void undo() {
         if (!undoStack.isEmpty()) {
-            undoStack.peek().execute();
+            undoStack.peek().undo();
             redoStack.add(undoStack.pop());
         }
     }
 
-    public static void redo() {
+    public void redo() {
         if (!redoStack.isEmpty()) {
             redoStack.peek().execute();
             undoStack.add(redoStack.pop());
