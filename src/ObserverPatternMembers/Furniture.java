@@ -15,7 +15,7 @@ public class Furniture implements Observer {
 
     @Override
     public void display() {
-        System.out.println("Process is complete for" + name);
+        System.out.println("Process is complete for " + name);
     }
     @Override
     public void update() {
