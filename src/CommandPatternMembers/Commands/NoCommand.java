@@ -8,5 +8,10 @@ public class NoCommand implements Command {
     public void execute() {
         System.out.println("No Command Assigned!");
     }
+
+    @Override
+    public void undo() {
+        System.out.println("No Command Assigned!");
+    }
     
 }

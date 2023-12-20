@@ -13,11 +13,14 @@ public class AirConditionerLow implements Command{
         this.airConditioner = Conditioner;
     }
 
-
-
     @Override
     public void execute() {
-        airConditioner.off();
+        airConditioner.low();
+    }
+
+    @Override
+    public void undo() {
+        airConditioner.high();
     }
 
 

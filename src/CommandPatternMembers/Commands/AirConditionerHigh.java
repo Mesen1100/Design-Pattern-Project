@@ -17,4 +17,10 @@ public class AirConditionerHigh implements Command {
        airConditioner.high();
     }
 
+    @Override
+    public void undo() {
+        airConditioner.low();
+    }
+    
+
 }
