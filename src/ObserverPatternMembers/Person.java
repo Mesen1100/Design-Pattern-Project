@@ -10,7 +10,7 @@ public class Person implements Subject{
     private String name;
     private ArrayList<Observer> observers;
 
-    Person(String name){
+    public Person(String name){
         this.name = name;
         observers = new ArrayList<Observer>();
     }
@@ -29,6 +29,12 @@ public class Person implements Subject{
     }
     public void setName(String name) {
         this.name = name;
+    }
+    
+    public void notifyObservers() {
+        for(Observer observer: observers) {
+            observer.update();
+        }
     }
     
      
