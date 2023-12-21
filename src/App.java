@@ -4,13 +4,21 @@ import CommandPatternMembers.Commands.AirConditionerHigh;
 import CommandPatternMembers.Commands.AirConditionerLow;
 import CommandPatternMembers.Commands.AirConditionerOff;
 import CommandPatternMembers.Commands.AirConditionerOn;
+import CommandPatternMembers.Commands.LightOff;
+import CommandPatternMembers.Commands.LightOn;
 import CommandPatternMembers.Commands.MusicPlayerDown;
 import CommandPatternMembers.Commands.MusicPlayerOff;
 import CommandPatternMembers.Commands.MusicPlayerOn;
 import CommandPatternMembers.Commands.MusicPlayerUp;
+import CommandPatternMembers.Commands.TVDown;
+import CommandPatternMembers.Commands.TVOff;
+import CommandPatternMembers.Commands.TVOn;
+import CommandPatternMembers.Commands.TVUp;
 import CommandPatternMembers.Furnitures.AirConditioner;
+import CommandPatternMembers.Furnitures.Light;
 import CommandPatternMembers.Furnitures.MusicPlayer;
 import CommandPatternMembers.Furnitures.RemoteControl;
+import CommandPatternMembers.Furnitures.TV;
 import ObserverPatternMembers.Furniture;
 import ObserverPatternMembers.Person;
 
@@ -64,11 +72,22 @@ public class App {
          * control.setCommand(2, musicon, musicoff);
          * control.setCommand(3, musicup, musicdown);
          * 
+         * Light light = new Light();
+         * LightOff lightOff = new LightOff(light);
+         * LightOn lightOn = new LightOn(light);
+         * control.setCommand(4, lightOn, lightOff);
+         * 
+         * TV tv = new TV();
+         * TVOn tvOn = new TVOn(tv);
+         * TVOff tvOff = new TVOff(tv);
+         * TVUp tvUp = new TVUp(tv);
+         * TVDown tvDown = new TVDown(tv);
+         * control.setCommand(5, tvOn, tvOff);
+         * control.setCommand(6, tvUp, tvDown);
          * 
          * System.out.println(control.toString());
          * 
          */
 
-        
     }
 }
