@@ -16,20 +16,20 @@ public class MusicPlayer {
         if (volume<45){
             volume++;
         }
-        getVolume();
+        printVolume();
     }
     public void volumeDown(){
         if(volume>0){
             volume--;
         }
-        getVolume();
+        printVolume();
     }
     public void on(){
         active=true;
         System.out.println("Music Player is On");
-        getVolume();
+        printVolume();
     }
-    public void getVolume(){
+    public void printVolume(){
         System.out.println("Volume is "+volume);
     } 
 
