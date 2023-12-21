@@ -16,13 +16,13 @@ public class AirConditioner {
         if(speed>1){
             speed--;
         }
-        System.out.println("Air Conditioner Speed: "+speed );
+        printSpeed();
     }
     public void high(){
         if(speed<3){
             speed++;
         }
-        System.out.println("Air Conditioner Speed: "+speed );
+        printSpeed();
     }
     public void on() {
         active=true;
@@ -30,9 +30,13 @@ public class AirConditioner {
             speed=1;
         }
         System.out.println("Air Conditioner On");
+        printSpeed();
     }
     public int getSpeed(){
         return speed;
+    }
+    public void printSpeed(){
+        System.out.println("Air Conditioner Speed: "+speed );
     }
 
 }
