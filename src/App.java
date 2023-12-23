@@ -47,6 +47,8 @@ public class App {
         Furniture dishwasher = new Furniture("Dishwasher", new Date(System.currentTimeMillis()));
         Furniture toaster = new Furniture("Toaster", new Date(System.currentTimeMillis()));
 
+        Furniture[] furnitures = { owen, washingmachine, dishwasher, toaster };
+
         // Command Pattern
         RemoteControl control = new RemoteControl();
 
@@ -113,7 +115,10 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         int closesystem = 0;
         while (closesystem != -1) {
-            System.out.println("\nRemote Control for 1 \nFurniture Remote Access for 2\nExit for -1");
+            person.notifyObservers();
+            System.out.println("---------------");
+            System.out.println("---------------");
+            System.out.println("\nRemote Control for 1 \nFurniture Remote Access for 2\nRefresh for 3\nExit for -1");
             System.out.print("Enter:");
             int choose = 0;
             try {
@@ -171,8 +176,20 @@ public class App {
                     closecontrol--;
                 }
             } else if (choose == 2) {
+                for (int i = 0; i < furnitures.length; i++) {
+                    System.out.println("Press " + i + " for " + furnitures[i].getName());
+                }
+                int optionfurniture = scanner.nextInt();
+                System.out.println("Time for " + furnitures[optionfurniture].getName());
+                System.out.print("Enter Minute Format:");
+                int time = scanner.nextInt();
+                furnitures[optionfurniture].setDate(new Date(System.currentTimeMillis() + (time * 60000)));
+                person.registerObserver(furnitures[optionfurniture]);
+
+            }else if(choose==3){
                 
-            } else if (choose == -1) {
+            } 
+            else if (choose == -1) {
                 closesystem = choose;
             }
 
