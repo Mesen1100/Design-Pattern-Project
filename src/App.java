@@ -78,7 +78,7 @@ public class App {
         LightOn lightOn = new LightOn(light);
 
         // Create Behaviors for Light
-        LightBehavior[] lightbehaviors = { new LightBlinkBehavior(), new LightNormalBehavior(),
+        LightBehavior[] lightbehaviors = { new LightNormalBehavior(), new LightBlinkBehavior(),
                 new LightRainbowBehavior() };
 
         // Set Command to Remote Controller for Light
@@ -92,8 +92,9 @@ public class App {
         TVDown tvDown = new TVDown(tv);
 
         // Create Behaviors for TV
-        TVBehavior[] tvbehaviors = { new TVChildBehavior(), new TVMovieBehavior(), new TVSportBehavior(),
-                new TVNormalBehavior() };
+        TVBehavior[] tvbehaviors = { new TVNormalBehavior(), new TVChildBehavior(), new TVMovieBehavior(),
+                new TVSportBehavior()
+        };
 
         // Set Command to Remote Controller for TV
         control.setCommand(5, tvOn, tvOff);
@@ -112,7 +113,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         int closesystem = 0;
         while (closesystem != -1) {
-            System.out.println("Remote Control for 1 \nFurniture Remote Access for 2\nExit for -1");
+            System.out.println("\nRemote Control for 1 \nFurniture Remote Access for 2\nExit for -1");
             System.out.print("Enter:");
             int choose = 0;
             try {
@@ -125,13 +126,52 @@ public class App {
                 System.out.println(control.toString());
                 int closecontrol = 0;
                 while (closecontrol != -1) {
-                    System.out.println("On Command for 1\t Off Command for 2 \t Undo for 3 \t Redo for 4");
-                    System.out.println("Mustafa Stay Here");
-                    Thread.sleep(10000);
+                    System.out.println(
+                            "On Command for 1\t Off Command for 2 \t Undo for 3 \t Redo for 4 \t Change Mode for 5\t Exit for -1");
+                    int optionchoose = 0;
+                    try {
+                        optionchoose = scanner.nextInt();
+                    } catch (Exception e) {
+                        System.out.println("Wrong Number");
+                    }
+                    if (optionchoose == 1) {
+                        System.out.println(control.ontoString());
+                        System.out.println("Choose Command");
+                        int commandchoose = scanner.nextInt();
+                        control.onButtonPress(commandchoose);
+                    } else if (optionchoose == 2) {
+                        System.out.println(control.offtoString());
+                        System.out.println("Choose Command");
+                        int commandchoose = scanner.nextInt();
+                        control.offButtonPress(commandchoose);
+                    } else if (optionchoose == 3) {
+                        control.undo();
+                    } else if (optionchoose == 4) {
+                        control.redo();
+                    } else if (optionchoose == 5) {
+                        System.out.println("TV for 1\t Light for 2");
+                        int optionbehavior = scanner.nextInt();
+                        if (optionbehavior == 1) {
+                            for (int i = 0; i < tvbehaviors.length; i++) {
+                                System.out.println("Press " + i + " for " + tvbehaviors[i].toString());
+                            }
+                            System.out.println("Choose Behavior for TV");
+                            int behavior = scanner.nextInt();
+                            tv.setBehavior(tvbehaviors[behavior]);
+                        } else if (optionbehavior == 2) {
+                            for (int i = 0; i < lightbehaviors.length; i++) {
+                                System.out.println("Press " + i + " for " + lightbehaviors[i].toString());
+                            }
+                            System.out.println("Choose Behavior for Light");
+                            int behavior = scanner.nextInt();
+                            light.setLightBehavior(lightbehaviors[behavior]);
+                        }
+                    }
+
                     closecontrol--;
                 }
             } else if (choose == 2) {
-                System.out.println("1");
+                
             } else if (choose == -1) {
                 closesystem = choose;
             }
