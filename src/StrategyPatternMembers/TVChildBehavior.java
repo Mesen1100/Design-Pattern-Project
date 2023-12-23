@@ -13,7 +13,10 @@ public class TVChildBehavior implements TVBehavior {
     
     public TVChildBehavior() throws Exception{
         childchannel=new ArrayList<>();
-        File file=new File("src/Database/childchannel.txt");
+        //For Run Terminal 
+        File file=new File("Database/childchannel.txt");
+        //For Run Vs Code
+        //File file=new File("src/Database/childchannel.txt");
         Scanner scanner=new Scanner(file);
         while(scanner.hasNext()){
             childchannel.add(scanner.nextInt());

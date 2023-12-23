@@ -12,7 +12,10 @@ ArrayList<Integer> moviechannel;
     
     public TVMovieBehavior() throws Exception{
         moviechannel=new ArrayList<>();
-        File file=new File("src/Database/moviechannel.txt");
+        //For Run Terminal
+        File file=new File("Database/moviechannel.txt");
+        //For Run Vs Code
+        //File file=new File("src/Database/moviechannel.txt");
         Scanner scanner=new Scanner(file);
         while(scanner.hasNext()){
             moviechannel.add(scanner.nextInt());
