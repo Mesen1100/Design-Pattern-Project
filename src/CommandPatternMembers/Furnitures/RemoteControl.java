@@ -10,10 +10,10 @@ public class RemoteControl {
     Command[] offCommands;
 
     public RemoteControl() {
-        onCommands=new Command[8];
-        offCommands=new Command[8];
+        onCommands=new Command[10];
+        offCommands=new Command[10];
         Command noCommand=new NoCommand();
-        for(int i=0;i<8;i++){
+        for(int i=0;i<onCommands.length;i++){
             onCommands[i]=noCommand;
             offCommands[i]=noCommand;
         }
@@ -56,7 +56,8 @@ public class RemoteControl {
         StringBuffer stringBuff=new StringBuffer();
         stringBuff.append("\n -----Remote Control----- \n");
         for(int i=0;i<onCommands.length;i++){
-            stringBuff.append("[slot" + i + "] "+ onCommands[i].getClass().getName()+ " " +offCommands[i].getClass().getName()+"\n");
+            stringBuff.append("[slot" + i + "] "+ onCommands[i].toString()+
+             "-----" +offCommands[i].toString()+"\n");
         }
         return stringBuff.toString();
     } 
