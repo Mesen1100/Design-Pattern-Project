@@ -23,4 +23,7 @@ public class TVNormalBehavior implements TVBehavior{
         }
         return channel;
     }
+    public String toString(){
+        return "Normal Mode";
+    }
 }

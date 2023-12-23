@@ -45,5 +45,8 @@ ArrayList<Integer> moviechannel;
         }
         return moviechannel.get(sayi);
     }
+    public String toString(){
+        return "Movie Mode";
+    }
 
 }

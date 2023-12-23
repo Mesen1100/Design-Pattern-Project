@@ -45,4 +45,7 @@ public class TVSportBehavior implements TVBehavior{
         }
         return sportchannel.get(sayi);
     }
+    public String toString(){
+        return "Sport Mode";
+    }
 }

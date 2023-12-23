@@ -46,4 +46,8 @@ public class TVChildBehavior implements TVBehavior {
         }
         return childchannel.get(sayi);
     }
+
+    public String toString(){
+        return "Child Mode";
+    }
 }

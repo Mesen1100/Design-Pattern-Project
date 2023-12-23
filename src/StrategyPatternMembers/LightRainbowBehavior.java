@@ -36,5 +36,8 @@ public class LightRainbowBehavior implements LightBehavior {
     public void setColors(ArrayList<String> colors) {
         this.colors = colors;
     }
+    public String toString(){
+        return "Rainbow Mode";
+    }
 
 }

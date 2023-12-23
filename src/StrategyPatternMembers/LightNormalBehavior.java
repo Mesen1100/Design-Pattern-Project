@@ -7,4 +7,7 @@ public class LightNormalBehavior implements LightBehavior {
  public void on() {
      System.out.println("Light On");
  }
+ public String toString(){
+    return "Normal Mode";
+}
 }
