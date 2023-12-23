@@ -1,4 +1,6 @@
+import java.io.File;
 import java.util.Date;
+import java.util.Scanner;
 
 import CommandPattern.Command;
 import CommandPatternMembers.Commands.AirConditionerHigh;
@@ -25,9 +27,14 @@ import CommandPatternMembers.Furnitures.TV;
 import ObserverPatternMembers.Furniture;
 import ObserverPatternMembers.Person;
 import StrategyPattern.LightBehavior;
+import StrategyPattern.TVBehavior;
 import StrategyPatternMembers.LightBlinkBehavior;
 import StrategyPatternMembers.LightNormalBehavior;
 import StrategyPatternMembers.LightRainbowBehavior;
+import StrategyPatternMembers.TVChildBehavior;
+import StrategyPatternMembers.TVMovieBehavior;
+import StrategyPatternMembers.TVNormalBehavior;
+import StrategyPatternMembers.TVSportBehavior;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -106,23 +113,48 @@ public class App {
          * System.out.println(control.toString());
          */
 
-         RemoteControl control=new RemoteControl();
-         Light light=new Light();
-         LightOn lightOn=new LightOn(light);
-         LightOff lightOff=new LightOff(light);
-         LightBehavior [] behaviors={new LightBlinkBehavior(),new LightNormalBehavior(),new LightRainbowBehavior()};
-         control.setCommand(0, lightOn, lightOff);
-         control.onButtonPress(0);
-         control.offButtonPress(0);
-         light.setLightBehavior(behaviors[0]);
-         control.onButtonPress(0);
-         control.offButtonPress(0);
-         behaviors[0]=new LightBlinkBehavior(3);
-         light.setLightBehavior(behaviors[0]);
-         control.onButtonPress(0);
-         control.offButtonPress(0);
-         light.setLightBehavior(behaviors[2]);
-         control.onButtonPress(0);
-         control.offButtonPress(0);
+       /*  RemoteControl control = new RemoteControl();
+        Light light = new Light();
+        LightOn lightOn = new LightOn(light);
+        LightOff lightOff = new LightOff(light);
+        LightBehavior[] behaviors = { new LightBlinkBehavior(), new LightNormalBehavior(), new LightRainbowBehavior() };
+        control.setCommand(0, lightOn, lightOff);
+        control.onButtonPress(0);
+        control.offButtonPress(0);
+        light.setLightBehavior(behaviors[0]);
+        control.onButtonPress(0);
+        control.offButtonPress(0);
+        behaviors[0] = new LightBlinkBehavior(3);
+        light.setLightBehavior(behaviors[0]);
+        control.onButtonPress(0);
+        control.offButtonPress(0);
+        light.setLightBehavior(behaviors[2]);
+        control.onButtonPress(0);
+        control.offButtonPress(0);
+
+        TV tv = new TV();
+        TVOn on = new TVOn(tv);
+        TVOff off = new TVOff(tv);
+        TVDown down = new TVDown(tv);
+        TVUp up = new TVUp(tv);
+        control.setCommand(1, on, off);
+        control.setCommand(2, up, down);
+        control.onButtonPress(1);
+        TVBehavior[] behavior = { new TVChildBehavior(), new TVMovieBehavior(), new TVSportBehavior(),
+                new TVNormalBehavior() };
+        for (int i = 0; i < 3; i++) {
+            tv.setBehavior(behavior[i]);
+            for (int j = 0; j < 25; j++) {
+                control.onButtonPress(2);
+                Thread.sleep(200);
+            }
+            for (int j = 0; j < 25; j++) {
+                control.offButtonPress(2);
+                Thread.sleep(200);
+
+            }
+
+        }
+*/
     }
 }
