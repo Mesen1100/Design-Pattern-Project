@@ -19,5 +19,8 @@ public class LightOff implements Command{
     public void undo() {
         light.on();
     }
+    public String toString(){
+        return "Light Off Button";
+    }
 
 }

@@ -19,4 +19,7 @@ public class LightOn implements Command{
     public void undo() {
         light.off();
     }
+    public String toString(){
+        return "Light On Button";
+    }
 }

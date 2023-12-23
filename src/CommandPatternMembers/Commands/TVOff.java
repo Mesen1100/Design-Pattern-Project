@@ -19,4 +19,7 @@ public class TVOff implements Command {
     public void undo() {
         tv.on();
     }
+    public String toString(){
+        return "TV Off Button";
+    }
 }

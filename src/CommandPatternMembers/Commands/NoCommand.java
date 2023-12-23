@@ -13,5 +13,7 @@ public class NoCommand implements Command {
     public void undo() {
         System.out.println("No Command Assigned!");
     }
-    
+    public String toString(){
+        return "No Command";
+    }
 }
