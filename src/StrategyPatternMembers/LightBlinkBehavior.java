@@ -19,4 +19,7 @@ public class LightBlinkBehavior implements LightBehavior{
     public void setTime(double time) {
         this.time = time;
     }
+    public String toString(){
+        return "Blink Mode";
+    }
 }

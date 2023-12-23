@@ -24,4 +24,10 @@ public class Furniture implements Observer {
             display();
         }
     }
+    public String getName() {
+        return name;
+    }
+    public void setDate(Date date){
+        this.date=date;
+    }
 }

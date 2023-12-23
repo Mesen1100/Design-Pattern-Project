@@ -1,7 +1,6 @@
 package StrategyPatternMembers;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,7 +12,11 @@ public class TVSportBehavior implements TVBehavior{
     
     public TVSportBehavior() throws Exception{
         sportchannel=new ArrayList<>();
-        File file=new File("src/Database/sportchannel.txt");
+        //For Run Terminal
+        File file=new File("Database/sportchannel.txt");
+        //For Run VS code
+        // File file=new File("src/Database/sportchannel.txt");
+
         Scanner scanner=new Scanner(file);
         while(scanner.hasNext()){
             sportchannel.add(scanner.nextInt());
@@ -29,7 +32,6 @@ public class TVSportBehavior implements TVBehavior{
         else{
             sayi--;
         }
-
         return sportchannel.get(sayi);
     }
 
@@ -42,5 +44,8 @@ public class TVSportBehavior implements TVBehavior{
             sayi++;
         }
         return sportchannel.get(sayi);
+    }
+    public String toString(){
+        return "Sport Mode";
     }
 }

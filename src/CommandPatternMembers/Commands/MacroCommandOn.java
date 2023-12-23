@@ -23,4 +23,7 @@ public class MacroCommandOn implements Command {
             onCommand[i].undo();
         }
     }
+    public String toString(){
+        return "Macro Command On Button";
+    }
 }

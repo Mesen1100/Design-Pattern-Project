@@ -6,8 +6,6 @@ import CommandPatternMembers.Furnitures.AirConditioner;
 public class AirConditionerHigh implements Command {
     private final AirConditioner airConditioner;
 
-    
-
     public AirConditionerHigh(AirConditioner Conditioner) {
         this.airConditioner = Conditioner;
     }
@@ -16,10 +14,12 @@ public class AirConditionerHigh implements Command {
     public void execute() {
        airConditioner.high();
     }
-
     @Override
     public void undo() {
         airConditioner.low();
+    }
+    public String toString(){
+        return "Air Condioner High Button";
     }
     
 

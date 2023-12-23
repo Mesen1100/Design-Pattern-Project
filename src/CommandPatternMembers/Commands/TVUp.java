@@ -18,4 +18,7 @@ public class TVUp implements Command{
     public void undo() {
         tv.down();
     }
+    public String toString(){
+        return "TV Channel Up Button";
+    }
 }

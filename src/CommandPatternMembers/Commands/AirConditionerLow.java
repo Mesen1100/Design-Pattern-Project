@@ -22,6 +22,9 @@ public class AirConditionerLow implements Command{
     public void undo() {
         airConditioner.high();
     }
+    public String toString(){
+        return "Air Condioner Low Button";
+    }
 
 
 }

@@ -23,5 +23,8 @@ public class MacroCommandOff implements Command {
             offCommand[i].undo();
         }
     }
+    public String toString(){
+        return "Macro Command Off Button";
+    }
 
 }

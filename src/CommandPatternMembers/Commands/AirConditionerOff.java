@@ -19,5 +19,8 @@ public class AirConditionerOff implements Command {
     public void undo() {
         airConditioner.on();
     }
+    public String toString(){
+        return "Air Condioner Off Button";
+    }
 
 }

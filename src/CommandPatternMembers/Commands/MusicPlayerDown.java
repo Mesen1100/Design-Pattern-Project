@@ -17,4 +17,7 @@ public class MusicPlayerDown implements Command{
     public void undo() {
         musicPlayer.volumeUp();
     }
+    public String toString(){
+        return "Music Player Volume Down Button";
+    }
 }

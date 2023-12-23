@@ -19,5 +19,8 @@ public class MusicPlayerOff implements Command {
     public void undo() {
         musicPlayer.on();
     }
+    public String toString(){
+        return "Music Player Off Button";
+    }
 
 }
