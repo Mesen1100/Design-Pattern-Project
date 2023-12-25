@@ -19,15 +19,15 @@ public class Furniture implements Observer {
     }
     @Override
     public void update() {
-        Date newdate = new Date(System.currentTimeMillis());
-        if(newdate.after(this.date)) {
-            display();
-        }
+        
     }
     public String getName() {
         return name;
     }
     public void setDate(Date date){
         this.date=date;
+    }
+    public Date getDate(){
+        return date;
     }
 }
