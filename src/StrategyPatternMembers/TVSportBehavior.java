@@ -13,9 +13,9 @@ public class TVSportBehavior implements TVBehavior{
     public TVSportBehavior() throws Exception{
         sportchannel=new ArrayList<>();
         //For Run Terminal
-        File file=new File("Database/sportchannel.txt");
+        //File file=new File("Database/sportchannel.txt");
         //For Run VS code
-        // File file=new File("src/Database/sportchannel.txt");
+        File file=new File("src/Database/sportchannel.txt");
 
         Scanner scanner=new Scanner(file);
         while(scanner.hasNext()){

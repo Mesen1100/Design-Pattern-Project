@@ -1,5 +1,6 @@
 import java.util.Date;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 import CommandPattern.Command;
 import CommandPatternMembers.Commands.AirConditionerHigh;
@@ -111,13 +112,70 @@ public class App {
         // Set Command to Remote Controller for Macro
         control.setCommand(7, macroCommandOn, macroCommandOff);
 
+        System.out.println(" W      W  EEEEE  L      CCCC   OOO   M      M  EEEEE");
+        System.out.println(" W      W  E      L     C      O   O  M M  M M  E    ");
+        System.out.println(" W  W   W  EEEE   L     C      O   O  M  MM  M  EEEE ");
+        System.out.println(" W W  W W  E      L     C      O   O  M      M  E    ");
+        System.out.println(" W      W  EEEEE  LLLLL  CCCC   OOO   M      M  EEEEE");
+        System.out.println();
+
+        System.out.println("    A     U   U  TTTTT  OOO   M   M      A     TTTTT  I   OOO  N   N");
+        System.out.println("   A A    U   U    T   O   O  MM MM     A A      T    I  O   O NN  N");
+        System.out.println("  A   A   U   U    T   O   O  M M M    A   A     T    I  O   O N N N");
+        System.out.println(" AAAAAAA  U   U    T   O   O  M   M   AAAAAAA    T    I  O   O N  NN");
+        System.out.println("A       A  UUU     T    OOO   M   M  A       A   T   III  OOO  N   N");
+        System.out.println();
+
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("------------WELCOME TO HOME AUTOMATION SYSTEM-----------------");
+        System.out.println("--------------------------------------------------------------");
+        System.out.println();
+
+        // ANSI escape code for green color
+        final String ANSI_GREEN = "\u001B[32m";
+        // ANSI escape code to reset color
+        final String ANSI_RESET = "\u001B[0m";
+
+        // Displaying the initial loading message
+        System.out.print("Loading: ");
+
+        // Simulating progress by incrementing the progress bar
+        for (int i = 0; i <= 100; i += 5) {
+            System.out.print("[");
+            int j;
+            for (j = 0; j < i / 2; j++) {
+                System.out.print("#");
+            }
+            for (; j < 50; j++) {
+                System.out.print(" ");
+            }
+
+            // Color the completed part of the progress bar in green
+            if (i == 100) {
+                System.out.print(ANSI_GREEN + "]" + ANSI_RESET);
+                System.out.print(ANSI_GREEN + " " + i + "%" + ANSI_RESET);
+            } else {
+                System.out.print("]");
+                System.out.print(" " + i + "%");
+            }
+
+            
+            System.out.print("\r"); // Move the cursor back to the beginning of the line
+
+            // Simulate progress taking time (here, it's just for demonstration)
+            TimeUnit.MILLISECONDS.sleep(100);
+        }
+
+        System.out.println("\nLoading complete.");
+        System.out.println("System is ready to use");
+        System.out.println();
+
         // Entering System from here
         Scanner scanner = new Scanner(System.in);
         int closesystem = 0;
         while (closesystem != -1) {
             person.notifyObservers();
-            System.out.println("---------------");
-            System.out.println("---------------");
+            System.out.println("---------------#####################-----------------");
             System.out.println("\nRemote Control for 1 \nFurniture Remote Access for 2\nRefresh for 3\nExit for -1");
             System.out.print("Enter:");
             int choose = 0;
@@ -186,10 +244,9 @@ public class App {
                 furnitures[optionfurniture].setDate(new Date(System.currentTimeMillis() + (time * 60000)));
                 person.registerObserver(furnitures[optionfurniture]);
 
-            }else if(choose==3){
-                
-            } 
-            else if (choose == -1) {
+            } else if (choose == 3) {
+
+            } else if (choose == -1) {
                 closesystem = choose;
             }
 
