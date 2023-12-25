@@ -36,7 +36,7 @@ public class Person implements Subject{
         for(int i =0;i<observers.size();i++) {
             Date newdate = new Date(System.currentTimeMillis());
             if(newdate.after(observers.get(i).getDate())) {
-                observers.get(i).display();
+                observers.get(i).update();
                 removeObserver(observers.get(i));
             }
         }
