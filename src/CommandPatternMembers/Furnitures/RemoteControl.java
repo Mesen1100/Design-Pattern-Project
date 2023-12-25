@@ -56,24 +56,24 @@ public class RemoteControl {
         StringBuffer stringBuff=new StringBuffer();
         stringBuff.append("\n -----Remote Control----- \n");
         for(int i=0;i<onCommands.length;i++){
-            stringBuff.append("[slot" + i + "] "+ onCommands[i].toString()+
+            stringBuff.append("Button "+i+" ---> "+ onCommands[i].toString()+
              "-----" +offCommands[i].toString()+"\n");
         }
         return stringBuff.toString();
     } 
     public String ontoString(){
         StringBuffer stringBuff=new StringBuffer();
-        stringBuff.append("\n -----Remote Control----- \n");
+        stringBuff.append("\n -----On Remote Control----- \n");
         for(int i=0;i<onCommands.length;i++){
-            stringBuff.append("[slot" + i + "] "+ onCommands[i].toString()+"\n");
+            stringBuff.append("Button "+i+" ---> "+ onCommands[i].toString()+"\n");
         }
         return stringBuff.toString();
     } 
     public String offtoString(){
         StringBuffer stringBuff=new StringBuffer();
-        stringBuff.append("\n -----Remote Control----- \n");
+        stringBuff.append("\n -----Off Remote Control----- \n");
         for(int i=0;i<onCommands.length;i++){
-            stringBuff.append("[slot" + i + "] "+offCommands[i].toString()+"\n");
+            stringBuff.append("Button "+i+" ---> "+offCommands[i].toString()+"\n");
         }
         return stringBuff.toString();
     } 

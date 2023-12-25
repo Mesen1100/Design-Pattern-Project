@@ -1,6 +1,7 @@
 package ObserverPatternMembers;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import ObserverPattern.Observer;
 import ObserverPattern.Subject;
@@ -32,8 +33,12 @@ public class Person implements Subject{
     }
     
     public void notifyObservers() {
-        for(Observer observer: observers) {
-            observer.update();
+        for(int i =0;i<observers.size();i++) {
+            Date newdate = new Date(System.currentTimeMillis());
+            if(newdate.after(observers.get(i).getDate())) {
+                observers.get(i).update();
+                removeObserver(observers.get(i));
+            }
         }
     }
     
