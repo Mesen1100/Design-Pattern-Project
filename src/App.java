@@ -1,3 +1,6 @@
+//author Mustafa Esen - Özgür Cansız
+//date 25.12.2023
+//version 1.0
 import java.util.Date;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
