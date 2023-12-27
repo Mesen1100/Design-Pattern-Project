@@ -14,7 +14,7 @@ The Home Automation project addresses.The implemented design patterns contribute
 
 ## UML Diagram
 
-![UML Diagram](https://github.com/Mesen1100/Design-Pattern-Project/bin/Database/Design-Pattern-Project-UML.png)
+![UML Diagram](https://github.com/Mesen1100/Design-Pattern-Project/blob/Mesen1100-patch-1/bin/Database/Design-Pattern-Project-UML.png)
 
 ## Developers
 
